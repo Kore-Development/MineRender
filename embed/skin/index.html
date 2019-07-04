@@ -121,7 +121,7 @@
                         document.getElementsByTagName("canvas")[0].classList.add("shadow");
                     }
                     if (params.get("headOnly") && params.get("headOnly") === "true") {
-                        var partNames = ["leftArm", "rightArm", "leftLeg", "rightLeg", "cape", "jacket", "leftSleeve", "rightSleeve", "leftTrousers", "rightTrousers"];
+                        var partNames = ["body", "leftArm", "rightArm", "leftLeg", "rightLeg", "cape", "jacket", "leftSleeve", "rightSleeve", "leftTrousers", "rightTrousers"];
                         partNames.forEach(function (o) {
                             skinRender.getModelByName(o).visible = false;  
                         })
