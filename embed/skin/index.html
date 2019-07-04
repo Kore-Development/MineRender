@@ -32,6 +32,7 @@
         </style>
     </head>
     <body>
+        <a id="downloadButton" href="#" download="skin.png">Download</a>
         <img src="https://cdn.jsdelivr.net/gh/Kore-Development/MineRender@master/img/minerender_steve_gray_blur.png" id="placeholderImage">
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -59,6 +60,12 @@
                     https://skinrender.ga/embed/?skin.name=inventivetalent&controls.zoom=false&controls.pan=false&camera.position=-18,35,18&shadow=true
              */
             $(document).ready(function () {
+                var downloadButton = document.getElementById("downloadButton");
+                downloadButton.addEventListener('click', function (e) {
+                    var dataURL = document.body.getElementsByTagName('canvas')[0].toDataURL('image/png');
+                    button.href = dataURL;
+                });
+                
                 var url = new URL(window.location.href);
                 console.log(url);
                 var params = url.searchParams;
@@ -135,7 +142,17 @@
                         })
                     }
                 });
-
+                function inIframe () {
+                    try {
+                        return window.self !== window.top;
+                    } catch (e) {
+                        return true;
+                    }
+                }
+                
+                if (inIframe) {}else{
+                    downloadButton.style.display = inherit;
+                }
             })
         </script>
     </body>
