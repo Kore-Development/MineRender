@@ -146,7 +146,9 @@
                     }, delay);
                 }
                 var downloadButton = document.getElementById("downloadButton");
-                waitUntil((typeof(document.body.getElementsByTagName('canvas')[0]) != undefined) ? true : false, function(){
+                waitUntil(function(){
+                    return (typeof(document.body.getElementsByTagName('canvas')[0]) != undefined) ? true : false;
+                }, function(){
                     downloadButton.href = document.body.getElementsByTagName('canvas')[0].toDataURL('image/png');
                 });
                 
