@@ -140,7 +140,7 @@
                 var downloadButton = document.getElementById("downloadButton");
                 downloadButton.addEventListener('click', function (e) {
                     var dataURL = document.body.getElementsByTagName('canvas')[0].toDataURL('image/png');
-                    button.href = dataURL;
+                    downloadButton.href = dataURL;
                 });
                 
                 function inIframe () {
@@ -152,7 +152,7 @@
                 }
                 
                 if (inIframe) {}else{
-                    downloadButton.style.display = inherit;
+                    downloadButton.style.display = 'inherit';
                 }
             })
         </script>
