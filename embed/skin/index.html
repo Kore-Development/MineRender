@@ -121,10 +121,17 @@
                         document.getElementsByTagName("canvas")[0].classList.add("shadow");
                     }
                     if (params.get("headOnly") && params.get("headOnly") === "true") {
-                        var partNames = ["body", "leftArm", "rightArm", "leftLeg", "rightLeg", "cape", "jacket", "leftSleeve", "rightSleeve", "leftTrousers", "rightTrousers"];
-                        partNames.forEach(function (o) {
-                            skinRender.getModelByName(o).visible = false;  
-                        })
+                        skinRender.getModelByName("body").visible = false;
+                        skinRender.getModelByName("leftArm").visible = false;
+                        skinRender.getModelByName("rightArm").visible = false;
+                        skinRender.getModelByName("leftLeg").visible = false;
+                        skinRender.getModelByName("rightLeg").visible = false;
+                        skinRender.getModelByName("cape").visible = false;
+                        skinRender.getModelByName("jacket").visible = false;
+                        skinRender.getModelByName("leftSleeve").visible = false;
+                        skinRender.getModelByName("rightSleeve").visible = false;
+                        skinRender.getModelByName("leftTrousers").visible = false;
+                        skinRender.getModelByName("rightTrousers").visible = false;
                     }
                     if (params.get("hideOuterLayers") && params.get("hideOuterLayers") === "true") {
                         var outerLayerNames = ["hat", "jacket", "leftSleeve", "rightSleeve", "leftTrousers", "rightTrousers"];
