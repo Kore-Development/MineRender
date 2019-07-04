@@ -120,6 +120,12 @@
                     if (params.get("shadow") && params.get("shadow") === "true") {
                         document.getElementsByTagName("canvas")[0].classList.add("shadow");
                     }
+                    if (params.get("headOnly") && params.get("headOnly") === "true") {
+                        var partNames = ["leftArm", "rightArm", "leftLeg", "rightLeg", "cape", "jacket", "leftSleeve", "rightSleeve", "leftTrousers", "rightTrousers"];
+                        partNames.forEach(function (o) {
+                            skinRender.getModelByName(o).visible = false;  
+                        })
+                    }
                     if (params.get("hideOuterLayers") && params.get("hideOuterLayers") === "true") {
                         var outerLayerNames = ["hat", "jacket", "leftSleeve", "rightSleeve", "leftTrousers", "rightTrousers"];
                         outerLayerNames.forEach(function (n) {
